@@ -1,0 +1,31 @@
+doctype html
+html
+    head
+        meta(name='viewport' content='width=device-width, initial-scale=1, user-scalable=no')
+        title= title
+        link(rel='stylesheet', href='./stylesheets/style.css')
+        link(rel='stylesheet' href='http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css')
+        link(rel='stylesheet' href='http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css')
+        script(src='http://code.jquery.com/jquery-1.11.0.min.js')
+        script(src='http://code.jquery.com/jquery-migrate-1.2.1.min.js')
+        script(src='http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js')
+    body
+        nav.navbar.navbar-default.navbar-fixed-top(role='navigation')
+            div.container
+                div.navbar-header
+                    button.navbar-toggle(type="button" data-toggle="collapse" data-target="#collapsedBar")
+                        span.sr-only Toggle navigation
+                        span.icon-bar
+                        span.icon-bar
+                        span.icon-bar
+                    a.navbar-brand GPA Manager
+                div.collapse.navbar-collapse#collapsedBar
+                    ul.nav.navbar-nav
+                        li: a(href='/') Home
+                        li: a(href='/about') About
+                    form.navbar-form.navbar-right(role='login')
+                        div.form-group
+                            input.form-control(type='text' placeholder='username')
+                            input.form-control(type='password' placeholder='password')
+                        button.btn.btn-default(type='submit') Login
+        block content

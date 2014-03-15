@@ -1,0 +1,10 @@
+extends layout
+
+block content
+    link(rel='stylesheet' href='./stylesheets/index.css')
+    div.jumbotron.text-center#main
+        h1 Welcome to GPA Manager!
+        p Monitor your class grades, minus the stress.
+        div.btn-group#buttons
+            a.btn.btn-primary(type='button' href='/about') Learn More
+            a.btn.btn-success(type='button' href='/signup') Sign Up
