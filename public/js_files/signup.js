@@ -22,10 +22,10 @@
 
         // checking if all fields have been filled
         $('input').each(function() {
-            if ($(this).val() == "") {
+            if ($(this).val() === "") {
                 $('#someEmpty').css('display', 'block');
             } else {
-                $('#someEmpty').css('display', 'block');
+                $('#someEmpty').css('display', 'none');
             }
         });
     });
