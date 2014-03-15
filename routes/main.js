@@ -20,4 +20,10 @@ module.exports = function(app) {
             title : pageTitle + 'About'
         });
     });
+
+    app.get('/signup', function(req, res) {
+        res.render('signup', {
+            title : pageTitle + 'Sign Up'
+        });
+    });
 }

@@ -10,7 +10,7 @@ html
         script(src='http://code.jquery.com/jquery-migrate-1.2.1.min.js')
         script(src='http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js')
     body
-        nav.navbar.navbar-default.navbar-fixed-top(role='navigation')
+        nav.navbar.navbar-default.navbar-fixed-top#menu(role='navigation')
             div.container
                 div.navbar-header
                     button.navbar-toggle(type="button" data-toggle="collapse" data-target="#collapsedBar")
@@ -29,3 +29,6 @@ html
                             input.form-control(type='password' placeholder='password')
                         button.btn.btn-default(type='submit') Login
         block content
+        nav.navbar.navbar-default.navbar-fixed-bottom#footer
+            div.container
+                p.text-center#footer-text Designed and developed by <a href='http://rukmal.me'>Rukmal Weerawarana</a>.

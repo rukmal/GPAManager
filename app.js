@@ -7,7 +7,6 @@
 var express = require('express');
 var http = require('http');
 var path = require('path');
-var mongoose = require('mongoose');
 
 var app = express();
 
@@ -33,24 +32,7 @@ if ('development' == app.get('env')) {
 // Linking the routes file to the app.
 require('./routes/main')(app);
 
-//Connecting to a database
-mongoose.connect('mongodb://localhost/gpamanager');
-var db = mongoose.connection;
-db.on('error', console.error.bind(console, 'connection error:'));
-db.once('open', function callback() {
-    var classSchema = mongoose.Schema({
-        name: String,
-        gpa: Number
-    });
-
-    var assignmentSchema = mongoose.Schema({
-        name: String,
-        actual: Number,
-        max: Number
-    });
-});
-
-
+//Starting the server
 http.createServer(app).listen(app.get('port'), function(){
     console.log('Express server listening on port ' + app.get('port'));
 });

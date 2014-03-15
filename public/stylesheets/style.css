@@ -16,7 +16,7 @@ body {
     margin-left: 20%;
     margin-right: 20%;
     border-radius: 25px;
-    background: rgba(255,255,255,0.7);
+    background: rgba(255,255,255,0.65);
 }
 
 #main p {
@@ -25,4 +25,22 @@ body {
 
 a {
     color: #00B7FF;
+}
+
+#menu {
+    background: rgba(255,255,255, 0.55);
+}
+
+#footer {
+    background: rgba(255,255,255, 0.55);
+}
+
+#footer-text {
+    padding-top: 1em;
+    color: rgb(51,51,51);
+}
+
+#footer-text a {
+    text-decoration: none;
+    color: rgb(51,51,51);
 }
