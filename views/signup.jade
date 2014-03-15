@@ -13,17 +13,17 @@ block content
         h1 Welcome aboard.
         form(role='form')
             div.form-group
-                input.form-control#firstName(type='text' placeholder='First Name')
+                input.form-control(name = 'firstName' type='text' placeholder='First Name')
             div.form-group
-                input.form-control#lastName(type='text' placeholder='Last Name')
+                input.form-control(name = 'lastName' type='text' placeholder='Last Name')
             div.form-group
                 input.form-control#email(type='email' placeholder='Email Address')
             div.form-group
-                input.form-control#emailConfirm(type='email' placeholder='Confirm Email Address')
+                input.form-control#emailConfirm(name='email' type='email' placeholder='Confirm Email Address')
             div.form-group
-                input.form-control#username(type='text' placeholder='Username')
+                input.form-control(name='username' type='text' placeholder='Username')
             div.form-group
-                input.form-control#password(type='password' placeholder='Password')
+                input.form-control#password(name='password' type='password' placeholder='Password')
             div.form-group
                 input.form-control#confirmPassword(type='password' placeholder='Confirm Password')
             div.form-group

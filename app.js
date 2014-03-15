@@ -7,6 +7,7 @@
 var express = require('express');
 var http = require('http');
 var path = require('path');
+var mongoose = require('mongoose');
 
 var app = express();
 
@@ -28,6 +29,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 if ('development' == app.get('env')) {
     app.use(express.errorHandler());
 }
+
+// connecting to a database
+mongoose.connect('mongodb://gpamanager:gpa@ds033559.mongolab.com:33559/gpamanager')
 
 // Linking the routes file to the app.
 require('./routes/main')(app);
