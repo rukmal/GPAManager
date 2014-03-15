@@ -1,5 +1,30 @@
 extends layout
 
 block content
-    div.jumbotron.text-center#main
-        h1 Welcome Aboard.
+    link(rel='stylesheet' href='stylesheets/signup.css')
+    script(src='js_files/signup.js')
+    div.jumbotron.text-center#main.signupjumbo
+        div.alert.alert-danger#someEmpty
+            a.alert-link(href='#') You didn't fill in all of the fields.
+        div.alert.alert-danger#wrongPassword
+            a.alert-link(href='#') The passwords don't match.
+        div.alert.alert-danger#wrongEmail
+            a.alert-link(href='#') The email addresses don't match.
+        h1 Welcome aboard.
+        form(role='form')
+            div.form-group
+                input.form-control#firstName(type='text' placeholder='First Name')
+            div.form-group
+                input.form-control#lastName(type='text' placeholder='Last Name')
+            div.form-group
+                input.form-control#email(type='email' placeholder='Email Address')
+            div.form-group
+                input.form-control#emailConfirm(type='email' placeholder='Confirm Email Address')
+            div.form-group
+                input.form-control#username(type='text' placeholder='Username')
+            div.form-group
+                input.form-control#password(type='password' placeholder='Password')
+            div.form-group
+                input.form-control#confirmPassword(type='password' placeholder='Confirm Password')
+            div.form-group
+                button.btn.btn-success#submitButton(type='button') Submit
