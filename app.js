@@ -1,6 +1,7 @@
-
 /*
- * Module dependencies.
+ * @author Rukmal Weerawarana
+ *
+ * @description Node server information.
  */
 
 var express = require('express');
