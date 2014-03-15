@@ -8,4 +8,4 @@ I am writing this utility to make the whole process easier.
 This utility is still in development, and is not ready for use. It will be deployed on Heroku.
 
 #Contact
-If you want to put in a pull request, please contact me at http://rukmal.me.
+If you want to submit a pull request, please contact me at http://rukmal.me.
