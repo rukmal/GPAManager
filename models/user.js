@@ -31,7 +31,7 @@ var userSchema = Schema({
     },
     password: {
         type: String,
-        require: true
+        required: true
     }
 });
 //

@@ -11,20 +11,20 @@ block content
         div.alert.alert-danger#wrongEmail
             a.alert-link(href='#') The email addresses don't match.
         h1 Welcome aboard.
-        form(method='user' action='/new')
+        form(method='post' action='/new-user')
             div.form-group
                 input.form-control(name='user_first' type='text' placeholder='First Name')
             div.form-group
                 input.form-control(name='user_last' type='text' placeholder='Last Name')
             div.form-group
-                input.form-control#email(type='user_email' placeholder='Email Address')
+                input.form-control(name='user_email' type='email' placeholder='Email Address')
             div.form-group
-                input.form-control#emailConfirm(type='email' placeholder='Confirm Email Address')
+                input.form-control(type='email' placeholder='Confirm Email Address')
             div.form-group
                 input.form-control(name='user_uname' type='text' placeholder='Username')
             div.form-group
-                input.form-control#password(name='user_password' type='password' placeholder='Password')
+                input.form-control(name='user_password' type='password' placeholder='Password')
             div.form-group
-                input.form-control#confirmPassword(type='password' placeholder='Confirm Password')
+                input.form-control(type='password' placeholder='Confirm Password')
             div.form-group
-                input.btn.btn-success#submitButton(type='submit' text='Submit')
+                input.btn.btn-success(type='submit' text='Submit')

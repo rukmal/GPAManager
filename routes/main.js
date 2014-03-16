@@ -20,13 +20,19 @@ exports.signup = function(req, res) {
     })
 }
 
+exports.signup_confirm = function(req, res) {
+    res.render('signup_pages/signup_confirm', {
+        title: pageTitle + 'Welcome!'
+    })
+}
+
 
 exports.new_user = function(req, res) {
     var user = new User({
         firstName: req.body.user_first,
         lastName: req.body.user_last,
         email: req.body.user_email,
-        username: req.body.user_uname,
+        userName: req.body.user_uname,
         password: req.body.user_password
     });
 
@@ -34,7 +40,8 @@ exports.new_user = function(req, res) {
         if (err) {
             console.log(err);
         } else {
-            res.redirect('/');
+            console.log('New user added: ' + user.userName);
+            res.redirect('/signup_confirm');
         }
     });
 }

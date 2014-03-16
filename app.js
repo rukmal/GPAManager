@@ -11,7 +11,7 @@ var http = require('http');
 var path = require('path');
 var routes = require('./routes/main')
 var mongoose = require('mongoose');
-var dbURL = 'mongodb://localhost/gpamanager';
+var dbURL = 'mongodb://localhost/new';
 
 mongoose.connect(dbURL);
 
@@ -39,8 +39,9 @@ if ('development' == app.get('env')) {
 
 app.get('/', routes.index);
 app.get('/signup', routes.signup);
+app.get('/signup_confirm', routes.signup_confirm);
 
-app.post('/new', routes.new_user);
+app.post('/new-user', routes.new_user);
 
 //Starting the server
 http.createServer(app).listen(app.get('port'), function(){
