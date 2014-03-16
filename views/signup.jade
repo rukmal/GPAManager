@@ -11,20 +11,20 @@ block content
         div.alert.alert-danger#wrongEmail
             a.alert-link(href='#') The email addresses don't match.
         h1 Welcome aboard.
-        form(role='form')
+        form(method='user' action='/new')
             div.form-group
-                input.form-control(name = 'firstName' type='text' placeholder='First Name')
+                input.form-control(name='user_first' type='text' placeholder='First Name')
             div.form-group
-                input.form-control(name = 'lastName' type='text' placeholder='Last Name')
+                input.form-control(name='user_last' type='text' placeholder='Last Name')
             div.form-group
-                input.form-control#email(type='email' placeholder='Email Address')
+                input.form-control#email(type='user_email' placeholder='Email Address')
             div.form-group
-                input.form-control#emailConfirm(name='email' type='email' placeholder='Confirm Email Address')
+                input.form-control#emailConfirm(type='email' placeholder='Confirm Email Address')
             div.form-group
-                input.form-control(name='username' type='text' placeholder='Username')
+                input.form-control(name='user_uname' type='text' placeholder='Username')
             div.form-group
-                input.form-control#password(name='password' type='password' placeholder='Password')
+                input.form-control#password(name='user_password' type='password' placeholder='Password')
             div.form-group
                 input.form-control#confirmPassword(type='password' placeholder='Confirm Password')
             div.form-group
-                button.btn.btn-success#submitButton(type='button') Submit
+                input.btn.btn-success#submitButton(type='submit' text='Submit')

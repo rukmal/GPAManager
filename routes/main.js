@@ -4,26 +4,37 @@
  * @description Main routing file for the GPA Manager application.
  */
 
-'use strict'
 
-var pageTitle = 'GPA Manager : '
+var pageTitle = 'GPA Manager : ';
+var User = require('./../models/user');
 
-module.exports = function(app) {
-    app.get('/', function(req, res) {
-        res.render('index', {
-            title : pageTitle + 'Home'
-        });
+exports.index = function(req, res) {
+    res.render('index', {
+        title : pageTitle + 'Home'
+    })
+}
+
+exports.signup = function(req, res) {
+    res.render('signup', {
+        title: pageTitle + 'Sign up'
+    })
+}
+
+
+exports.new_user = function(req, res) {
+    var user = new User({
+        firstName: req.body.user_first,
+        lastName: req.body.user_last,
+        email: req.body.user_email,
+        username: req.body.user_uname,
+        password: req.body.user_password
     });
 
-    app.get('/about', function(req, res) {
-        res.render('about', {
-            title : pageTitle + 'About'
-        });
-    });
-
-    app.get('/signup', function(req, res) {
-        res.render('signup', {
-            title : pageTitle + 'Sign Up'
-        });
+    user.save(function(err) {
+        if (err) {
+            console.log(err);
+        } else {
+            res.redirect('/');
+        }
     });
 }

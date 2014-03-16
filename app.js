@@ -4,10 +4,16 @@
  * @description Node server information.
  */
 
+ // mongoose setup
+
 var express = require('express');
 var http = require('http');
 var path = require('path');
+var routes = require('./routes/main')
 var mongoose = require('mongoose');
+var dbURL = 'mongodb://localhost/gpamanager';
+
+mongoose.connect(dbURL);
 
 var app = express();
 
@@ -19,6 +25,7 @@ app.use(express.favicon());
 app.use(express.logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded());
+app.use(express.bodyParser());
 app.use(express.methodOverride());
 app.use(express.cookieParser('your secret here'));
 app.use(express.session());
@@ -30,11 +37,10 @@ if ('development' == app.get('env')) {
     app.use(express.errorHandler());
 }
 
-// connecting to a database
-mongoose.connect('mongodb://gpamanager:gpa@ds033559.mongolab.com:33559/gpamanager')
+app.get('/', routes.index);
+app.get('/signup', routes.signup);
 
-// Linking the routes file to the app.
-require('./routes/main')(app);
+app.post('/new', routes.new_user);
 
 //Starting the server
 http.createServer(app).listen(app.get('port'), function(){
