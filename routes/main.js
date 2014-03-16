@@ -40,7 +40,6 @@ exports.new_user = function(req, res) {
         if (err) {
             console.log(err);
         } else {
-            console.log('New user added: ' + user.userName);
             res.redirect('/signup_confirm');
         }
     });

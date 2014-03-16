@@ -11,7 +11,7 @@ var http = require('http');
 var path = require('path');
 var routes = require('./routes/main')
 var mongoose = require('mongoose');
-var dbURL = 'mongodb://localhost/new';
+var dbURL = 'mongodb://localhost/gpamanager';
 
 mongoose.connect(dbURL);
 
