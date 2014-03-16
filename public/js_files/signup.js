@@ -5,7 +5,7 @@
  */
 
  $(document).ready(function() {
-    // $('#submitButton').click(function() {
+    // var checkFields = function() {
     //     var done = true;
     //     // checking if passwords match
     //     if ($('#password').val() != $('#confirmPassword').val()) {
@@ -32,5 +32,6 @@
     //             $('#someEmpty').css('display', 'none');
     //         }
     //     });
+    //     return done;
     // });
 });

@@ -40,6 +40,7 @@ if ('development' == app.get('env')) {
 app.get('/', routes.index);
 app.get('/signup', routes.signup);
 app.get('/signup_confirm', routes.signup_confirm);
+app.get('/bad_username', routes.bad_username);
 
 app.post('/new-user', routes.new_user);
 

@@ -26,6 +26,12 @@ exports.signup_confirm = function(req, res) {
     })
 }
 
+exports.bad_username = function(req, res) {
+    res.render('signup_pages/bad_username', {
+        title: 'Bad username'
+    })
+}
+
 
 exports.new_user = function(req, res) {
     var user = new User({
@@ -39,6 +45,7 @@ exports.new_user = function(req, res) {
     user.save(function(err) {
         if (err) {
             console.log(err);
+            res.redirect('/bad_username');
         } else {
             res.redirect('/signup_confirm');
         }

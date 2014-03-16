@@ -55,7 +55,7 @@ userSchema.pre('save', function(next) {
         });
     });
 });
-//
+
 // userSchema.methods.comparePasswords = function(candidatePassword, cb) {
 //     bcrypt.compare(candidatePassword, this.password, function(err, isMatch) {
 //         if (err) {
