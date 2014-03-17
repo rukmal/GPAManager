@@ -38,6 +38,12 @@ exports.bad_login = function(req, res) {
     });
 };
 
+exports.success = function(req, res) {
+    res.render('success', {
+        title: pageTitle + 'Success'
+    });
+};
+
 
 exports.new_user = function(req, res) {
     var user = new User({
@@ -65,7 +71,8 @@ exports.check_login = function(req, res) {
             if (user[0] == null) {
                 res.redirect('/badlogin')
             } else {
-                console.log(user[0].comparePasswords(req.body.login_password));
+                user[0].comparePasswrods(req.body.login_password);
+                // FIX THIS
             }
         }
     });
