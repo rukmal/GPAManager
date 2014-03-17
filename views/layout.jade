@@ -24,11 +24,11 @@ html
                         li: a(href='/') Home
                         li: a(href='/features') Features
                         li: a(href='/about') About
-                    form.navbar-form.navbar-right(method='post')
+                    form.navbar-form.navbar-right(method='post' action='/login-attempt')
                         div.form-group
-                            input.form-control(type='text' placeholder='username')
-                            input.form-control(type='password' placeholder='password')
-                        button.btn.btn-default(type='submit') Login
+                            input.form-control(name='login_uname' type='text' placeholder='username')
+                            input.form-control(name='login_password' type='password' placeholder='password')
+                            button.btn.btn-default(type='submit') Login
         block content
         nav.navbar.navbar-default.navbar-fixed-bottom#footer
             div.container

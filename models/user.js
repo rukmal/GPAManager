@@ -7,11 +7,10 @@
 'use strict'
 
 var mongoose = require('mongoose');
-var Schema = mongoose.Schema;
 var bcrypt = require('bcrypt');
 var SALT_WORK_FACTOR = 10;
 
-var userSchema = Schema({
+var userSchema = new mongoose.Schema({
     firstName: {
         type: String,
         required: true
@@ -57,13 +56,14 @@ userSchema.pre('save', function(next) {
     });
 });
 
-// userSchema.methods.comparePasswords = function(candidatePassword, cb) {
-//     bcrypt.compare(candidatePassword, this.password, function(err, isMatch) {
-//         if (err) {
-//             return cbb(err);
-//         };
-//         cbb(null, isMatch);
-//     });
-// };
+userSchema.methods.comparePasswords = function(candidatePassword) {
+    bcrypt.compare(candidatePassword, this.password, function(err, result) {
+        if (err) {
+            console.log(err);
+        } else {
+            console.log(result);
+        }
+    });
+};
 
 module.exports = mongoose.model('User', userSchema);

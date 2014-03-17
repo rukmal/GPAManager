@@ -9,6 +9,7 @@
     "express": "*",
     "jade": "*",
     "mongodb":"*",
+    "mongo":"*",
     "mongoose":"*",
     "bcrypt":"*"
   }
