@@ -2,14 +2,7 @@ extends layout
 
 block content
     link(rel='stylesheet' href='stylesheets/signup.css')
-    script(src='js_files/signup.js')
     div.jumbotron.text-center#main.signupjumbo
-        div.alert.alert-danger#someEmpty
-            a.alert-link(href='#') You didn't fill in all of the fields.
-        div.alert.alert-danger#wrongPassword
-            a.alert-link(href='#') The passwords don't match.
-        div.alert.alert-danger#wrongEmail
-            a.alert-link(href='#') The email addresses don't match.
         h1 Welcome aboard.
         form(method='post' action='/new-user')
             div.form-group
@@ -17,14 +10,10 @@ block content
             div.form-group
                 input.form-control(name='user_last' type='text' placeholder='Last Name')
             div.form-group
-                input.form-control#email(name='user_email' type='email' placeholder='Email Address')
-            div.form-group
-                input.form-control#emailConfirm(type='email' placeholder='Confirm Email Address')
+                input.form-control(name='user_email' type='email' placeholder='Email Address')
             div.form-group
                 input.form-control(name='user_uname' type='text' placeholder='Username')
             div.form-group
-                input.form-control#password(name='user_password' type='password' placeholder='Password')
+                input.form-control(name='user_password' type='password' placeholder='Password')
             div.form-group
-                input.form-control#confirmPassword(type='password' placeholder='Confirm Password')
-            div.form-group
-                input.btn.btn-success(type='submit' text='Submit')
+                button.btn.btn-success#submit(type='submit') Submit

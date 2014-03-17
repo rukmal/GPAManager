@@ -26,9 +26,9 @@ exports.signup_confirm = function(req, res) {
     })
 }
 
-exports.bad_username = function(req, res) {
-    res.render('signup_pages/bad_username', {
-        title: 'Bad username'
+exports.signup_error = function(req, res) {
+    res.render('signup_pages/signup_error', {
+        title: pageTitle + 'Signup error'
     })
 }
 
@@ -44,10 +44,9 @@ exports.new_user = function(req, res) {
 
     user.save(function(err) {
         if (err) {
-            console.log(err);
-            res.redirect('/bad_username');
+            res.redirect('/signup/error');
         } else {
-            res.redirect('/signup_confirm');
+            res.redirect('/signup/confirm');
         }
     });
 }
