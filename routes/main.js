@@ -71,8 +71,7 @@ exports.check_login = function(req, res) {
             if (user[0] == null) {
                 res.redirect('/badlogin')
             } else {
-                user[0].comparePasswrods(req.body.login_password);
-                // FIX THIS
+                user[0].comparePasswords(req.body.login_password);
             }
         }
     });
