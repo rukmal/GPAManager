@@ -75,7 +75,7 @@ exports.check_login = function(req, res) {
 			} else {
 				bcrypt.compare(req.body.login_password, user[0].password,
 					function(err, result) {
-					if (true) {
+					if (result) {
 						res.redirect('/success');
 					} else {
 						res.redirect('/badlogin');
