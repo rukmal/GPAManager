@@ -9,7 +9,7 @@ function SocketConfig (server) {
 
 	io.sockets.on('connection', function (socket) {
 		socket.emit('test', {
-			hello: 'hello world'
+			hello: 'hello world!'
 		});
 	});
 };
