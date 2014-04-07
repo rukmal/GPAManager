@@ -11,7 +11,7 @@ var http = require('http');
 var path = require('path');
 var routes = require('./routes/main')
 var mongoose = require('mongoose');
-var dbURL = 'mongodb://localhost/gpamanager';
+var dbURL = 'mongodb://admin:connecttrue@ds041347.mongolab.com:41347/gpamanager';
 var mongoUser = require('./models/user');
 
 mongoose.connect(dbURL);
