@@ -4,8 +4,6 @@
  * @description Node server information.
  */
 
- // mongoose setup
-
 var express = require('express');
 var http = require('http');
 var path = require('path');
@@ -49,6 +47,9 @@ app.post('/new-user', routes.new_user);
 app.post('/login-attempt', routes.check_login);
 
 //Starting the server
-http.createServer(app).listen(app.get('port'), function(){
+var server = http.createServer(app).listen(app.get('port'), function(){
     console.log('Express server listening on port ' + app.get('port'));
 });
+
+// Passing the server through to the socket.io config file
+var io = require('./private/js/socketconfig.js')(server);

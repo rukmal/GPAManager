@@ -8,9 +8,10 @@
   "dependencies": {
     "express": "*",
     "jade": "*",
-    "mongodb":"*",
-    "mongo":"*",
-    "mongoose":"*",
-    "bcrypt":"*"
+    "mongodb": "*",
+    "mongo": "*",
+    "mongoose": "*",
+    "bcrypt": "*",
+    "socket.io": "~0.9.16"
   }
 }
